@@ -118,7 +118,6 @@
 
             function Prs()
             {
-                alert("Teraz zagrajmy w papier, kamień, nożyce");
 
                 mprs = prompt("1 - kamień, 2 - papier, 3 - nożyce");
 
@@ -138,8 +137,13 @@
                 }
                 else if(mprs == 3)
                 {
-                    rmprs = "papier";
+                    rmprs = "nożyce";
                 }
+                else if(mprs != 1 || mprs != 2 || mprs != 3)
+                {
+                    alert("Wybrałeś niepoprawną liczbę");
+                    Prs();
+                } 
 
                 if(kprs == 1)
                 {
@@ -151,12 +155,14 @@
                 }
                 else if(kprs == 3)
                 {
-                    rkprs = "papier";
+                    rkprs = "nożyce";
                 }
 
                 if(mprs == 1 && kprs == 1)
                 {
                     alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem: " + rkprs);
+
+                    Prs();
                 }
                 else if(mprs == 1 && kprs == 2)
                 {
@@ -165,14 +171,20 @@
                 else if(mprs == 1 && kprs == 3)
                 {
                     alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+
+                    return 0;
                 }
                 else if(mprs == 2 && kprs == 1)
                 {
                     alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+
+                    return 0;
                 }
                 else if(mprs == 2 && kprs == 2)
                 {
                     alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\nWystawiłem " + rkprs);
+
+                    Prs();
                 }
                 else if(mprs == 2 && kprs == 3)
                 {
@@ -185,10 +197,14 @@
                 else if(mprs == 3 && kprs == 2)
                 {
                     alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+
+                    return 0;
                 }
                 else if(mprs == 3 && kprs == 3)
                 {
                     alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+
+                    Prs();
                 }
             }
 
@@ -270,9 +286,17 @@
                     }
 
                     alert("Gratulacje trafiłeś dobrą liczbę");
+
+                    alert("Teraz zagrajmy w papier, kamień, nożyce");
+
                     Prs();
+
+                    alert("tets");
+
                     lastResults.unshift(stringLv);
+
                     lastResultsError.unshift(j-1);
+                    
                     ShowYourScore();
                     
                 }
