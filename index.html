@@ -32,16 +32,16 @@
             .errors
             {
                 display: inline-block;
-            	font-family: "Lucida Console", "Courier New", monospace;
-            	margin-left: 18%;
+                font-family: "Lucida Console", "Courier New", monospace;
+                margin-left: 18%;
                 margin-right: 1.5%;
-            	background: #CF6679;
-            	width: 18%;
-            	border-radius: 8px;
-            	font-size: 250%;  
-            	line-height: 250%;
-            	padding: 15px;    
-            	color: #000000; 	
+                background: #CF6679;
+                width: 18%;
+                border-radius: 8px;
+                font-size: 250%;  
+                line-height: 250%;
+                padding: 15px;    
+                color: #000000;     
             }
             .results
             {
@@ -116,9 +116,85 @@
             let lastResults = ["DIFFICULTY","DIFFICULTY","DIFFICULTY","DIFFICULTY","DIFFICULTY"];
             let lastResultsError = [0,0,0,0,0];
 
+            function Prs()
+            {
+                alert("Teraz zagrajmy w papier, kamień, nożyce");
+
+                mprs = prompt("1 - kamień, 2 - papier, 3 - nożyce");
+
+                kprs = Math.floor(Math.random() * 3 + 1);
+
+                let rkprs;
+
+                console.log(kprs);
+
+                if(mprs == 1)
+                {
+                    rmprs = "papier";
+                }
+                else if(mprs == 2)
+                {
+                    rmprs = "kamień";
+                }
+                else if(mprs == 3)
+                {
+                    rmprs = "papier";
+                }
+
+                if(kprs == 1)
+                {
+                    rkprs = "papier";
+                }
+                else if(kprs == 2)
+                {
+                    rkprs = "kamień";
+                }
+                else if(kprs == 3)
+                {
+                    rkprs = "papier";
+                }
+
+                if(mprs == 1 && kprs == 1)
+                {
+                    alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem: " + rkprs);
+                }
+                else if(mprs == 1 && kprs == 2)
+                {
+                    alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                }
+                else if(mprs == 1 && kprs == 3)
+                {
+                    alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                }
+                else if(mprs == 2 && kprs == 1)
+                {
+                    alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                }
+                else if(mprs == 2 && kprs == 2)
+                {
+                    alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\nWystawiłem " + rkprs);
+                }
+                else if(mprs == 2 && kprs == 3)
+                {
+                    alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\n" + "\nWystawiłem " + rkprs);
+                }
+                else if(mprs == 3 && kprs == 1)
+                {
+                    alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                }
+                else if(mprs == 3 && kprs == 2)
+                {
+                    alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                }
+                else if(mprs == 3 && kprs == 3)
+                {
+                    alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                }
+            }
+
             function ShowYourScore()
             {
-            	var count = document.getElementById("counter");
+                var count = document.getElementById("counter");
 
                 var diff = document.getElementById("DiffLvl");
 
@@ -134,7 +210,7 @@
                 let lR4 = document.getElementById("r4");
                 let lRE4 = document.getElementById("rE4");
 
-            	console.log(count);
+                console.log(count);
 
                 console.log(DiffLvl);
 
@@ -153,7 +229,7 @@
                     diffSlt = "HARD";
                 }
 
-            	count.innerHTML = "POMYŁKI: " + (j - 1);
+                count.innerHTML = "POMYŁKI: " + (j - 1);
 
                 diff.innerHTML = "POZIOM TRUDNOŚCI: " + diffSlt;
 
@@ -176,7 +252,7 @@
 
                 console.log(r);
 
-                let mn = prompt("Wybierz swoją liczbe");
+                let mn = prompt("Proszę wybierz teraz swoją liczbe");
 
                 if(mn == r)
                 {
@@ -193,7 +269,8 @@
                         stringLv = "HARD";
                     }
 
-                    alert("Gratulacje wygrałeś nowego iphona 12 Pro Max");
+                    alert("Gratulacje trafiłeś dobrą liczbę");
+                    Prs();
                     lastResults.unshift(stringLv);
                     lastResultsError.unshift(j-1);
                     ShowYourScore();
@@ -205,13 +282,13 @@
                 }
                 else if(mn < r)
                 {
-                    alert("Liczba jest za mała");
+                    alert("Ta liczba jest za mała");
                     j++;
                     chooseNumber();
                 }
                 else if(mn > r)
                 {
-                    alert("Liczba jest za duża");
+                    alert("Ta liczba jest za duża");
                     j++;
                     chooseNumber();  
                 }   
@@ -220,28 +297,28 @@
             function EasyFunt()
             {
                 Name();
-            	j = 1;
+                j = 1;
                 lvS = 10;
                 r = Math.floor(Math.random() * lvS + 1);
-                alert("Wybierz liczbę w zakresie 1 - 10");
+                alert("Proszę wybierz liczbę w zakresie 1 - 10");
                 chooseNumber();
             }
 
             function MediumFunt()
             {
-            	j = 1;
+                j = 1;
                 lvS = 30;
                 r = Math.floor(Math.random() * lvS + 1);
-                alert("Wybierz liczbę w zakresie 1 - 30");
+                alert("Proszę wybierz liczbę w zakresie 1 - 30");
                 chooseNumber();
             }
 
             function HardFunt()
             {
-            	j = 1;
+                j = 1;
                 lvS = 50;
                 r = Math.floor(Math.random() * lvS + 1);
-                alert("Wybierz liczbę w zakresie 1 - 50");
+                alert("Proszę wybierz liczbę w zakresie 1 - 50");
                 chooseNumber();
             }
 
@@ -265,7 +342,7 @@
 
         </script>
         <div>
-        	<h1>SPRAWDŹ SWOJE SZCZĘŚCIE</h1>
+            <h1>SPRAWDŹ SWOJE SZCZĘŚCIE</h1>
         </div>
         <div>
 
@@ -277,7 +354,7 @@
 
         </div>
         <div class="errors">
-        	<center><p id="counter">POMYŁKI: </p></center>
+            <center><p id="counter">POMYŁKI: </p></center>
         </div>
 
         <div class="results">
