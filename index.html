@@ -296,7 +296,7 @@
                     lastResults.unshift(stringLv);
 
                     lastResultsError.unshift(j-1);
-                    
+
                     ShowYourScore();
                     
                 }
@@ -315,7 +315,11 @@
                     alert("Ta liczba jest za duża");
                     j++;
                     chooseNumber();  
-                }   
+                }
+                else if(mn == null)
+                {
+                    return 0;
+                }  
             }
 
             function EasyFunt()
