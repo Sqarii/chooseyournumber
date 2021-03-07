@@ -33,7 +33,7 @@
             .PrsButton
             {
                 font-family: "Lucida Console", "Courier New", monospace;
-                background-color: #03DAC6;
+                background-color: #018786;
                 border: none;
                 color: #000000;
                 text-align: center;
@@ -140,6 +140,8 @@
 
             let name;
 
+            whatIsYourName = new Boolean(false);
+
             var r;
 
             let lvS;
@@ -152,8 +154,9 @@
 
             function Prs()
             {
+                Name();
 
-                mprs = prompt("1 - kamień, 2 - papier, 3 - nożyce");
+                mprs = prompt("Zagrajmy papier, kamień, nożyce\n" + "\nWybierz: 1 - kamień, 2 - papier, 3 - nożyce");
 
                 kprs = Math.floor(Math.random() * 3 + 1);
 
@@ -172,6 +175,10 @@
                 else if(mprs == 3)
                 {
                     rmprs = "nożyce";
+                }
+                else if(mprs == null)
+                {
+                    return 0;
                 }
                 else if(mprs != 1 || mprs != 2 || mprs != 3)
                 {
@@ -216,13 +223,13 @@
                 }
                 else if(mprs == 2 && kprs == 2)
                 {
-                    alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\nWystawiłem " + rkprs);
+                    alert("Remis\n" + "\nWystawiłeś: " + rmprs  + "\n" + "\nWystawiłem " + rkprs);
 
                     Prs();
                 }
                 else if(mprs == 2 && kprs == 3)
                 {
-                    alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\n" + "\nWystawiłem " + rkprs);
+                    alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
                 }
                 else if(mprs == 3 && kprs == 1)
                 {
@@ -362,6 +369,7 @@
 
             function MediumFunt()
             {
+                Name();
                 j = 1;
                 lvS = 30;
                 r = Math.floor(Math.random() * lvS + 1);
@@ -371,6 +379,7 @@
 
             function HardFunt()
             {
+                Name();
                 j = 1;
                 lvS = 50;
                 r = Math.floor(Math.random() * lvS + 1);
@@ -378,23 +387,38 @@
                 chooseNumber();
             }
 
-            // function Name()
-            // {
-            //     name = prompt("Podaj swoje imię");
+            function Name()
+            {
+                
 
-            //     if(name == "Marzena" || name == "marzena")
-            //     {
-            //         alert("Witam Panią Profesor");
-            //     }
-            //     else if(name == "Krzysztof" || name == "krzysztof")
-            //     {
-            //         alert("Witam Pana Profesora");
-            //     }
-            //     else
-            //     {
-            //         alert("Witam " + name);
-            //     }
-            // }
+                if(whatIsYourName == false)
+                {
+                    name = prompt("Podaj swoje imię");
+
+                    if(name == "Marzena" || name == "marzena")
+                    {
+                        alert("Witam Panią Profesor");
+                    }
+                    else if(name == "Krzysztof" || name == "krzysztof")
+                    {
+                        alert("Witam Pana Profesora");
+                    }
+                    else if(name == null)
+                    {
+                        Name();
+                    }
+                    else
+                    {
+                        alert("Witam " + name);
+                    }
+
+                    whatIsYourName = true;
+
+                    console.log(whatIsYourName);
+                }
+
+                
+            }
 
         </script>
         <div>
@@ -412,7 +436,7 @@
             </div>
 
             <div>
-                <center><button class="PrsButton" onclick="Prs()">PAPIER, KAMIEŃ, NOŻYCE</button></center>
+                <center><button class="PrsButton" onclick="Prs()">PAPIER KAMIEŃ NOŻYCE</button></center>
             </div>
         </div>
 
