@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>ChooseYourNumber</title>
-        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <link rel="stylesheet" href="mystyle.css" type="text/css"/>
     </head>
     <body>
         <script type="text/javascript">
@@ -27,8 +27,6 @@
 
             function Prs()
             {
-                Name();
-
                 kprs = Math.floor(Math.random() * 3 + 1);
 
                 let rkprs;
@@ -301,7 +299,6 @@
 
             function EasyFunt()
             {
-                Name();
                 j = 1;
                 lvS = 10;
                 r = Math.floor(Math.random() * lvS + 1);
@@ -311,7 +308,6 @@
 
             function MediumFunt()
             {
-                Name();
                 j = 1;
                 lvS = 30;
                 r = Math.floor(Math.random() * lvS + 1);
@@ -321,7 +317,6 @@
 
             function HardFunt()
             {
-                Name();
                 j = 1;
                 lvS = 50;
                 r = Math.floor(Math.random() * lvS + 1);
@@ -332,49 +327,55 @@
             function PaperFunt()
             {
                 mprs = 1;
-                Prs();
+                document.getElementById("img1").src = "Images/black.png";
+                document.getElementById("img2").src = "Images/pcblack.png";
+                setTimeout(Prs, 2000);
             }
 
             function RockFunt()
             {
                 mprs = 2;
-                Prs();
+                document.getElementById("img1").src = "Images/black.png";
+                document.getElementById("img2").src = "Images/pcblack.png";
+                setTimeout(Prs, 2000);
             }
 
             function ScissorsFunt()
             {
                 mprs = 3;
-                Prs();
+                document.getElementById("img1").src = "Images/black.png";
+                document.getElementById("img2").src = "Images/pcblack.png";
+                setTimeout(Prs, 2000);
             }
 
-            function Name()
-            {
-                if(whatIsYourName == false)
-                {
-                    name = prompt("Podaj swoje imię");
+            // function Name()
+            // {
+            //     if(whatIsYourName == false)
+            //     {
+            //         name = prompt("Podaj swoje imię");
 
-                    if(name == "Marzena" || name == "marzena")
-                    {
-                        alert("Witam Panią Profesor");
-                    }
-                    else if(name == "Krzysztof" || name == "krzysztof" || name == "Szot" || name == "szot")
-                    {
-                        alert("Witam Pana Profesora");
-                    }
-                    else if(name == null)
-                    {
-                        Name();
-                    }
-                    else
-                    {
-                        alert("Witam " + name);
-                    }
+            //         if(name == "Marzena" || name == "marzena")
+            //         {
+            //             alert("Witam Panią Profesor");
+            //         }
+            //         else if(name == "Krzysztof" || name == "krzysztof" || name == "Szot" || name == "szot")
+            //         {
+            //             alert("Witam Pana Profesora");
+            //         }
+            //         else if(name == null)
+            //         {
+            //             Name();
+            //         }
+            //         else
+            //         {
+            //             alert("Witaj " + name);
+            //         }
 
-                    whatIsYourName = true;
+            //         whatIsYourName = true;
 
-                    console.log(whatIsYourName);
-                }
-            }
+            //         console.log(whatIsYourName);
+            //     }
+            // }
 
         </script>
         <div>
@@ -476,7 +477,7 @@
                 <div class="images">
                     <img id="img2" src="Images/pckamien.png" width="250" height="250">
                 </div>
-                <p id="winnertext" class="text1">WYGRAŁEŚ</p>
+                <p id="winnertext" class="text1">REMIS</p>
 
             </center>
         </div>
