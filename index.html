@@ -9,6 +9,8 @@
 
             let name;
 
+            let mprs;
+
             whatIsYourName = new Boolean(false);
 
             var r;
@@ -27,13 +29,17 @@
             {
                 Name();
 
-                mprs = prompt("Zagrajmy papier, kamień, nożyce\n" + "\nWybierz: 1 - kamień, 2 - papier, 3 - nożyce");
-
                 kprs = Math.floor(Math.random() * 3 + 1);
 
                 let rkprs;
 
                 console.log(kprs);
+
+                let I1 = document.getElementById("img1").src;
+                let I2 = document.getElementById("img2").src;
+                let W = document.getElementById("winnertext");
+
+
 
                 if(mprs == 1)
                 {
@@ -72,51 +78,116 @@
 
                 if(mprs == 1 && kprs == 1)
                 {
-                    alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem: " + rkprs);
+                    // alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem: " + rkprs);
 
-                    Prs();
+                    // Prs();
+
+                    // I1.innerHTML = "<img src='Images/papier.png' width='250' height='250'>";
+                    // I2.innerHTML = "<img src='Images/pcpapier.png' width='250' height='250'>";
+                    W.innerHTML = "REMIS";
+
+                    document.getElementById("img1").src = "Images/papier.png";
+                    document.getElementById("img2").src = "Images/pcpapier.png";
+
                 }
                 else if(mprs == 1 && kprs == 2)
                 {
-                    alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                    // alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+
+                    // I1.innerHTML = "<img src='Images/papier.png' width='250' height='250'>";
+                    // I2.innerHTML = "<img src='Images/pckamien.png' width='250' height='250'>";
+                    W.innerHTML = "WYGRANA";
+
+                    document.getElementById("img1").src = "Images/papier.png";
+                    document.getElementById("img2").src = "Images/pckamien.png";
+
                 }
                 else if(mprs == 1 && kprs == 3)
                 {
-                    alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                    // alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
 
-                    return 0;
+                    // return 0;
+
+                    // I1.innerHTML = "<img src='Images/papier.png' width='250' height='250'>";
+                    // I2.innerHTML = "<img src='Images/pcnozyce.png' width='250' height='250'>";
+                    W.innerHTML = "PRZEGRANA";
+
+                    document.getElementById("img1").src = "Images/papier.png";
+                    document.getElementById("img2").src = "Images/pcnozyce.png";
                 }
                 else if(mprs == 2 && kprs == 1)
                 {
-                    alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                    // alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
 
-                    return 0;
+                    // return 0;
+
+                    document.getElementById("img1").src = "Images/kamien.png";
+                    document.getElementById("img2").src = "Images/pcpapier.png";
+
+                    // I1.src = "<img src='Images/kamien.png' width='250' height='250'>";
+                    // I2.src = "<img src='Images/pcpapier.png' width='250' height='250'>";
+                    W.innerHTML = "PRZEGRANA";
                 }
                 else if(mprs == 2 && kprs == 2)
                 {
-                    alert("Remis\n" + "\nWystawiłeś: " + rmprs  + "\n" + "\nWystawiłem " + rkprs);
+                    // alert("Remis\n" + "\nWystawiłeś: " + rmprs  + "\n" + "\nWystawiłem " + rkprs);
 
-                    Prs();
+                    // Prs();
+
+                    // I1.src = "<img src='Images/kamien.png' width='250' height='250'>";
+                    // I2.src = "<img src='Images/pckamien.png' width='250' height='250'>";
+                    W.innerHTML = "REMIS";
+
+                    document.getElementById("img1").src = "Images/kamien.png";
+                    document.getElementById("img2").src = "Images/pckamien.png";
                 }
                 else if(mprs == 2 && kprs == 3)
                 {
-                    alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                    // alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+
+                    // I1.src = "<img src='Images/kamien.png' width='250' height='250'>";
+                    // I2.src = "<img src='Images/pcnozyce.png' width='250' height='250'>";
+                    W.innerHTML = "WYGRANA";
+
+                    document.getElementById("img1").src = "Images/kamien.png";
+                    document.getElementById("img2").src = "Images/pcnozyce.png";
                 }
                 else if(mprs == 3 && kprs == 1)
                 {
-                    alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                    // alert("Wygrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+
+                    // I1.innerHTML = "<img src='Images/nozyce.png' width='250' height='250'>";
+                    // I2.innerHTML = "<img src='Images/pcpapier.png' width='250' height='250'>";
+                    W.innerHTML = "WYGRANA";
+
+                    document.getElementById("img1").src = "Images/nozyce.png";
+                    document.getElementById("img2").src = "Images/pcpapier.png";
                 }
                 else if(mprs == 3 && kprs == 2)
                 {
-                    alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                    // alert("Przegrałeś\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
 
-                    return 0;
+                    // return 0;
+
+                    // I1.innerHTML = "<img src='Images/nozyce.png' width='250' height='250'>";
+                    // I2.innerHTML = "<img src='Images/pckamien.png' width='250' height='250'>";
+                    W.innerHTML = "PRZEGRANA";
+
+                    document.getElementById("img1").src = "Images/nozyce.png";
+                    document.getElementById("img2").src = "Images/pckamien.png";
                 }
                 else if(mprs == 3 && kprs == 3)
                 {
-                    alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
+                    // alert("Remis\n" + "\nWystawiłeś: " + rmprs + "\n" + "\nWystawiłem " + rkprs);
 
-                    Prs();
+                    // Prs();
+
+                    // I1.innerHTML = "<img src='Images/nozyce.png' width='250' height='250'>";
+                    // I1.innerHTML = "<img src='Images/pcnozyce.png' width='250' height='250'>";
+                    W.innerHTML = "REMIS";
+
+                    document.getElementById("img1").src = "Images/nozyce.png";
+                    document.getElementById("img2").src = "Images/pcnozyce.png";
                 }
             }
 
@@ -258,6 +329,24 @@
                 chooseNumber();
             }
 
+            function PaperFunt()
+            {
+                mprs = 1;
+                Prs();
+            }
+
+            function RockFunt()
+            {
+                mprs = 2;
+                Prs();
+            }
+
+            function ScissorsFunt()
+            {
+                mprs = 3;
+                Prs();
+            }
+
             function Name()
             {
                 if(whatIsYourName == false)
@@ -293,17 +382,13 @@
         </div>
 
         <div class="gamesList">
-            <center><p><b>GRY</b></p></center>
+            <center><p><b>LICZBY</b></p></center>
             <div>
                 <center><button class="numbersButton" onclick="EasyFunt()">EASY</button>
 
                 <button class="numbersButton" onclick="MediumFunt()">MEDIUM</button>
 
                 <button class="numbersButton" onclick="HardFunt()">HARD</button></center>
-            </div>
-
-            <div>
-                <center><button class="PrsButton" onclick="Prs()">PAPIER KAMIEŃ NOŻYCE</button></center>
             </div>
         </div>
 
@@ -364,6 +449,38 @@
                 </div>
             </div></center>
 
+        </div>
+
+        <div class="gamesList">
+            <center><p><b>PAPIER KAMIEŃ NOŻYCE</b></p></center>
+            <div>
+                <center><button class="numbersButton" onclick="PaperFunt()">PAPIER</button>
+
+                <button class="numbersButton" onclick="RockFunt()">KAMIEŃ</button>
+
+                <button class="numbersButton" onclick="ScissorsFunt()">NOŻYCE</button></center>
+            </div>
+        </div>
+        <div class="prsResults">
+
+            <center>
+                <b><p>WYNIKI</p></b>
+                <div class="images">
+                    <img id="img1" src="Images/kamien.png" width="250" height="250">
+                </div>
+
+                <div class="vs">
+                    <img src="Images/vs.png" width="250" height="250">
+                </div>
+
+                <div class="images">
+                    <img id="img2" src="Images/pckamien.png" width="250" height="250">
+                </div>
+                <p id="winnertext" class="text1">WYGRAŁEŚ</p>
+
+            </center>
+            
+            
         </div>
     </body>
 </html>
